@@ -4,8 +4,9 @@ function GalleryItem(props){
     //const[name, setName] = useState(null);
     return(
         <div>
-            <h1>GalleryItem</h1>
-            <p>props: {JSON.stringify(props)}</p>
+            <p>{props.image.path}</p>
+            <p>{props.image.description}</p>
+            <p>{props.image.likes}</p>
         </div>
     )
 }
