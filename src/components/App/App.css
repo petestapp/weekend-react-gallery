@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .App-header {
@@ -13,3 +14,19 @@
   font-size: 1.5em;
 }
 
+.wrapper {
+  display: flex;
+}
+
+.cell {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 200px;
+  vertical-align: middle;
+  flex: auto;
+  padding: 15px;
+}
+
+.likes {
+  vertical-align: bottom;
+}

@@ -8,18 +8,23 @@ function GalleryItem(props){
         setDisplay(!display);
     }
     const addLike=()=>{
-        console.log(`in addLike`);
+        axios.put(`/gallery/like/${props.image.id}`).then((response)=>{
+            props.getImages();
+        }).catch((err=>{
+            console.log(err);
+            alert('error adding like');
+        }))
     }
 
     //const[name, setName] = useState(null);
     return(
-        <div>
+        <div className="cell">
             {
                 display ?
                 <img onClick={toggleDisplay} src={props.image.path} alt={props.image.description} /> :
                 <p onClick={toggleDisplay} >{props.image.description}</p>
             }
-            <p>{props.image.likes}</p>
+            <p>Likes: {props.image.likes}</p>
             <button onClick={addLike}>like</button>
         </div>
     )

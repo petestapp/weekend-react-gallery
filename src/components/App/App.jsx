@@ -8,13 +8,11 @@ function App() {
   const[images, setImages]=useState([]);
 
   useEffect(()=>{
-    console.log('component loaded');
     getImages();
   }, []);
 
   const getImages=()=>{
     axios.get('/gallery').then((response)=>{
-      console.log(response.data);
       setImages(response.data);
     }).catch((err)=>{
       alert('error getting images');
